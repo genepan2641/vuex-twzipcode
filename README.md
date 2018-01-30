@@ -10,21 +10,20 @@ original repo was made by CasperLaiTW(https://github.com/CasperLaiTW/vue-twzipco
 ```
 
 ## Usage
+### your root js file (or anywhere you put Vuex store in)
 ```js
-    // in your root js file where you put Vuex store in 
-    
+
+
     import Vue from 'vue'
     import App from './App'
 
     import addressInput from 'vuex-twzipcode';
     
-    /**
-     *insert package module(which is named "addressInput") and components
-     */
+    /* insert package module (which named "addressInput") and components */
     Vue.use(addressInput, { store }); 
     
-
-    import store from './store' // your original store
+    /* your original store */
+    import store from './store' 
 
     new Vue({
         el: '#app',
@@ -33,6 +32,16 @@ original repo was made by CasperLaiTW(https://github.com/CasperLaiTW/vue-twzipco
         template: '<App/>'
     })
 ```
+### place component
+The package will automatically register `<address-input>` as global component,
+you can use it like so:
+
+```js
+    <div id="app">
+        <address-input></address-input>
+    </div>    
+```
+
 
 ## Build Setup
 
