@@ -10,13 +10,19 @@ original repo was made by CasperLaiTW(https://github.com/CasperLaiTW/vue-twzipco
 ```
 
 ## Usage
-```
+```js
     // in your root js file where you put Vuex store in 
+    
     import Vue from 'vue'
     import App from './App'
 
     import addressInput from 'vuex-twzipcode';
-    Vue.use(addressInput, { store }); // insert package module(addressInput) and components
+    
+    /**
+     *insert package module(which is named "addressInput") and components
+     */
+    Vue.use(addressInput, { store }); 
+    
 
     import store from './store' // your original store
 
