@@ -1,5 +1,8 @@
 <template>
-	<select :class="[className, 'district']" :name="name" v-model="district">
+	<select 
+		:class="[className, 'district', { errorBorder: addressInput.zipcodeError }]" 
+		:name="name" 
+		v-model="district">
 		<option v-for="district in districts" :value="district" :key="district">{{ district }}</option>
 	</select>
 </template>

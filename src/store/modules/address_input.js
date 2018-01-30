@@ -7,7 +7,9 @@ const addressInput = {
         address: '',
         zipcode: '',
         county: '選擇城市',
-        district: '選擇地區'
+        district: '選擇地區',
+        zipcodeError: '',
+        addressError: ''
     },
     mutations: {
         ['UPDATE_COUNTY'](state, newCounty) {
@@ -21,6 +23,12 @@ const addressInput = {
         },
         ['UPDATE_ADDRESS'](state, newAddress) {
             state.address = newAddress;
+        },
+        ['UPDATE_ZIPCODE_ERROR'](state, newError) {
+            state.zipcodeError = newError;
+        },
+        ['UPDATE_ADDRESS_ERROR'](state, newAddress) {
+            state.addressError = newAddress;
         }
     },
     actions: {
@@ -50,6 +58,26 @@ const addressInput = {
                 })
             });
         },
+        validateAddress({ commit, state, dispatch }) {
+            var validateOk = true;
+            if (state.address == "") {
+                commit('UPDATE_ADDRESS_ERROR', '請填上正確的地址');
+                validateOk = false;
+            } else {
+                commit('UPDATE_ADDRESS_ERROR', false);
+            }
+            return validateOk;
+        },
+        validateZipcode({ commit, state, dispatch }) {
+            var validateOk = true;
+            if (state.zipcode == "") {
+                commit('UPDATE_ZIPCODE_ERROR', '請選擇正確的行政區域');
+                validateOk = false;
+            } else {
+                commit('UPDATE_ZIPCODE_ERROR', false);
+            }
+            return validateOk;
+        }
     }
 };
 

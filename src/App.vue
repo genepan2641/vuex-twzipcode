@@ -9,17 +9,28 @@
       </p>
 
     <h3>example</h3>
+    <twzipcode></twzipcode>
     <address-input></address-input>
+    <button @click="validate">authenticate</button>
   </div>
 </template>
 
 <script>
 import addressInput from './components/address_input.vue';
+import twzipcode from './components/twzipcode.vue';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'App',
+  methods: {
+    validate() {
+      this.$store.dispatch('addressInput/validateAddress');
+      this.$store.dispatch('addressInput/validateZipcode');
+    }
+  },
   components: {
-    'address-input': addressInput
+    'address-input': addressInput,
+    twzipcode
   }
 }
 </script>

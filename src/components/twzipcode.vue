@@ -3,6 +3,7 @@
 		<zipcode  :class-name="classNames.zipcode"  :name="names.zipcode"></zipcode>
 		<county   :class-name="classNames.county"   :name="names.county"></county>
 		<district :class-name="classNames.district" :name="names.district"></district>
+		<p v-cloak class='errorMsg hasError' v-if='addressInput.zipcodeError'>{{ addressInput.zipcodeError }}</p>
 	</div>
 </template>
 
@@ -72,3 +73,13 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+.errorBorder {
+  border: 1px rgb(228, 83, 58) solid;
+}
+.errorMsg {
+  color: rgb(228, 83, 58);
+  font-size: 14px;
+}
+</style>

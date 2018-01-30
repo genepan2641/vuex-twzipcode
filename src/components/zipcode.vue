@@ -1,6 +1,6 @@
 <template>
 	<input
-		:class="[className, 'zipcode']"
+		:class="[className, 'zipcode', { errorBorder: addressInput.zipcodeError }]"
 		type="text"
 		maxLength="3"
 		v-model="zipcode"
