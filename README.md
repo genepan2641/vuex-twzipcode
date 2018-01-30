@@ -1,8 +1,32 @@
 # vuex-twzipcode
 
-> Vuex - TWzipcode
+Rewrite Vue2-twzipcode in Vuex way 
 
-Rewrite Vue2-TWzipcode in Vuex way 
+original repo was made by CasperLaiTW(https://github.com/CasperLaiTW/vue-twzipcode) and knovour(https://www.npmjs.com/package/vue2-twzipcode)
+
+## Install
+```
+    npm install vuex-twzipcode --save
+```
+
+## Usage
+```
+    // in your root js file where you put Vuex store in 
+    import Vue from 'vue'
+    import App from './App'
+
+    import addressInput from 'vuex-twzipcode';
+    Vue.use(addressInput, { store }); // insert package module(addressInput) and components
+
+    import store from './store' // your original store
+
+    new Vue({
+        el: '#app',
+        store,
+        components: { App },
+        template: '<App/>'
+    })
+```
 
 ## Build Setup
 
