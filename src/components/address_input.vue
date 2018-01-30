@@ -31,7 +31,7 @@ export default {
 		}
 	},
 	methods: {
-		authencation: function () {
+		authentication: function () {
 			var validateOk = true;
 			this.resetError();
 			if (this.addressInput.zipcode == "" || this.addressInput.county == "" || this.addressInput.district == "") {

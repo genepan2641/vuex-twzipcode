@@ -6,7 +6,7 @@ function install(Vue, options = {}) {
 
     Vue.component('address-input', cmp)
 
-    options.store.registerModule('vuex-tw-zipcode', module)
+    options.store.registerModule('addressInput', module)
 }
 
 export default {
