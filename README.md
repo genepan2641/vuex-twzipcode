@@ -2,7 +2,8 @@
 
 Rewrite Vue2-twzipcode in Vuex way 
 
-original repo was made by CasperLaiTW(https://github.com/CasperLaiTW/vue-twzipcode) and knovour(https://www.npmjs.com/package/vue2-twzipcode)
+original repo was made by
+[CasperLaiTW](https://github.com/CasperLaiTW/vue-twzipcode)(vue-twzipcode) and [knovour](https://www.npmjs.com/package/vue2-twzipcode)(vue2-twzipcode)
 
 ## Install
 ```
@@ -12,7 +13,6 @@ original repo was made by CasperLaiTW(https://github.com/CasperLaiTW/vue-twzipco
 ## Usage
 ### your root js file (or anywhere you put Vuex store in)
 ```js
-
 
     import Vue from 'vue'
     import App from './App'
