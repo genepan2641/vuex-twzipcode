@@ -1,9 +1,9 @@
 <template>
 	<div class="">
-		<input v-model="address" name="address" type="text" id="address" placeholder="請填上正確的地址" :class="{ errorBorder: addressInput.addressError }">
-		<p v-cloak class="errorMsg" v-if='addressInput.addressError'>{{ addressInput.addressError }}</p>
+		<input v-model="address" name="address" type="text" id="address" placeholder="請填上正確的地址" :class="{ errorBorder: twzipcode.addressError }">
+		<p v-cloak class="errorMsg" v-if='twzipcode.addressError'>{{ twzipcode.addressError }}</p>
 	</div>
-</template>ㄊ
+</template>
 
 <script>
 import { mapState } from 'vuex';
@@ -14,10 +14,10 @@ export default {
 		}
 	},
 	computed: {
-		...mapState(['addressInput']),
+		...mapState(['twzipcode']),
 		address: {
-			get() { return this.addressInput.address },
-			set(val) { this.$store.commit('addressInput/UPDATE_ADDRESS', val) }
+			get() { return this.twzipcode.address },
+			set(val) { this.$store.commit('twzipcode/UPDATE_ADDRESS', val) }
 		}
 	}
 }

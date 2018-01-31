@@ -2,8 +2,8 @@
 
 Rewrite Vue2-twzipcode in Vuex way 
 
-original repo was made by
-[CasperLaiTW](https://github.com/CasperLaiTW/vue-twzipcode)(vue-twzipcode) and [knovour](https://www.npmjs.com/package/vue2-twzipcode)(vue2-twzipcode)
+this package was based on orginal repos made by
+[knovour](https://www.npmjs.com/package/vue2-twzipcode)(vue2-twzipcode) and[CasperLaiTW](https://github.com/CasperLaiTW/vue-twzipcode)(vue-twzipcode) 
 
 ## Install
 ```
@@ -11,16 +11,17 @@ original repo was made by
 ```
 
 ## Usage
-### your root js file (or anywhere you put Vuex store in)
+### module name: `twzipcode`
+your root js file (or anywhere you put Vuex store in)
 ```js
 
     import Vue from 'vue'
     import App from './App'
 
-    import addressInput from 'vuex-twzipcode';
+    import twzipcode from 'vuex-twzipcode';
     
-    /* insert package module (which named "addressInput") and components */
-    Vue.use(addressInput, { store }); 
+    /* insert module and components */
+    Vue.use(twzipcode, { store }); 
     
     /* your original store */
     import store from './store' 
@@ -32,13 +33,13 @@ original repo was made by
         template: '<App/>'
     })
 ```
-### place component
-The package will automatically register `<address-input>` as global component,
+### component
+The package will automatically register `<twzipcode>` as global component,
 you can use it like so:
 
 ```js
     <div id="app">
-        <address-input></address-input>
+        <twzipcode></twzipcode>
     </div>    
 ```
 

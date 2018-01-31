@@ -1,6 +1,6 @@
 <template>
 	<input
-		:class="[className, 'zipcode', { errorBorder: addressInput.zipcodeError }]"
+		:class="[className, 'zipcode']"
 		type="text"
 		maxLength="3"
 		v-model="zipcode"
@@ -19,11 +19,16 @@ export default {
 
 	},
 	computed: {
-		...mapState(['addressInput']),
+		...mapState(['twzipcode']),
 		zipcode: {
-			get() { return this.addressInput.zipcode },
-			set(val) { this.$store.commit('addressInput/UPDATE_ZIPCODE', val) }
+			get() { return this.twzipcode.zipcode },
+			set(val) { this.$store.commit('twzipcode/UPDATE_ZIPCODE', val) }
 		}
 	}
 };
 </script>
+<style scoped>
+.zipcode {
+  width: 50px;
+}
+</style>

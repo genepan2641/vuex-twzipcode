@@ -1,6 +1,6 @@
 <template>
 	<select 
-		:class="[className, 'district', { errorBorder: addressInput.zipcodeError }]" 
+		:class="[className, 'district']" 
 		:name="name" 
 		v-model="district">
 		<option v-for="district in districts" :value="district" :key="district">{{ district }}</option>
@@ -15,15 +15,15 @@ export default {
 		name: { type: String, default: 'district' },
 	},
 	computed: {
-		...mapState(['addressInput']),
+		...mapState(['twzipcode']),
 		districts() {
-			return this.addressInput.county ?
-				Object.keys(this.addressInput.zipcodeData[this.addressInput.county]) :
+			return this.twzipcode.county ?
+				Object.keys(this.twzipcode.zipcodeData[this.twzipcode.county]) :
 				[];
 		},
 		district: {
-			get() { return this.addressInput.district },
-			set(val) { this.$store.commit('addressInput/UPDATE_DISTRICT', val) }
+			get() { return this.twzipcode.district },
+			set(val) { this.$store.commit('twzipcode/UPDATE_DISTRICT', val) }
 		}
 	}
 };

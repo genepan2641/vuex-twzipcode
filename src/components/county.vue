@@ -1,6 +1,6 @@
 <template>
 	<select 
-		:class="[className, 'county', { errorBorder: addressInput.zipcodeError }]" 
+		:class="[className, 'county']" 
 		:name="name" 
 		v-model="county" >
 		<option v-for="county in counties" :value="county" :key="county">{{ county }}</option>
@@ -15,13 +15,13 @@ export default {
 		name: { type: String, default: 'county' },
 	},
 	computed: {
-		...mapState(['addressInput']),
+		...mapState(['twzipcode']),
 		counties() {
-			return Object.keys(this.addressInput.zipcodeData);
+			return Object.keys(this.twzipcode.zipcodeData);
 		},
 		county: {
-			get() { return this.addressInput.county },
-			set(val) { this.$store.commit('addressInput/UPDATE_COUNTY', val) }
+			get() { return this.twzipcode.county },
+			set(val) { this.$store.commit('twzipcode/UPDATE_COUNTY', val) }
 		}
 	},
 };

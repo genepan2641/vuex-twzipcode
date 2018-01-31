@@ -1,15 +1,12 @@
 import regionData from '../../../static/js/regionData'; // all zipcodes
 
-const addressInput = {
+const twzipcode = {
     namespaced: true,
     state: {
         zipcodeData: regionData,
-        address: '',
         zipcode: '',
         county: '選擇城市',
-        district: '選擇地區',
-        zipcodeError: '',
-        addressError: ''
+        district: '選擇地區'
     },
     mutations: {
         ['UPDATE_COUNTY'](state, newCounty) {
@@ -20,15 +17,6 @@ const addressInput = {
         },
         ['UPDATE_ZIPCODE'](state, newZipcode) {
             state.zipcode = newZipcode;
-        },
-        ['UPDATE_ADDRESS'](state, newAddress) {
-            state.address = newAddress;
-        },
-        ['UPDATE_ZIPCODE_ERROR'](state, newError) {
-            state.zipcodeError = newError;
-        },
-        ['UPDATE_ADDRESS_ERROR'](state, newAddress) {
-            state.addressError = newAddress;
         }
     },
     actions: {
@@ -57,32 +45,8 @@ const addressInput = {
                     }
                 })
             });
-        },
-        validateAddress({ commit, state, dispatch }) {
-            var validateOk = true;
-            if (state.address == "") {
-                commit('UPDATE_ADDRESS_ERROR', '請填上正確的地址');
-                validateOk = false;
-            } else {
-                commit('UPDATE_ADDRESS_ERROR', false);
-            }
-            return validateOk;
-        },
-        validateZipcode({ commit, state, dispatch }) {
-            var validateOk = true;
-            if (state.zipcode == "") {
-                commit('UPDATE_ZIPCODE_ERROR', '請選擇正確的行政區域');
-                validateOk = false;
-            } else {
-                commit('UPDATE_ZIPCODE_ERROR', false);
-            }
-            return validateOk;
         }
     }
 };
 
-
-
-
-
-export default addressInput;
+export default twzipcode;

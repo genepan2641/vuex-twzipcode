@@ -3,7 +3,7 @@
 		<zipcode  :class-name="classNames.zipcode"  :name="names.zipcode"></zipcode>
 		<county   :class-name="classNames.county"   :name="names.county"></county>
 		<district :class-name="classNames.district" :name="names.district"></district>
-		<p v-cloak class='errorMsg hasError' v-if='addressInput.zipcodeError'>{{ addressInput.zipcodeError }}</p>
+		<p v-cloak class='errorMsg hasError' v-if='twzipcode.zipcodeError'>{{ twzipcode.zipcodeError }}</p>
 	</div>
 </template>
 
@@ -15,11 +15,6 @@ import District from './district.vue';
 export default {
 	data() {
 		return {
-			style: {
-				display: 'flex',
-				justifyContent: 'space-between',
-				flexWrap: 'wrap'
-			}
 		}
 	},
 	props: {
@@ -37,33 +32,32 @@ export default {
 			type: Object,
 			default(value) {
 				return Object.assign({
-					county: '',
-					district: '',
-					zipcode: '',
+					county: 'formControl-twzipcode',
+					district: 'formControl-twzipcode',
+					zipcode: 'formControl-twzipcode',
 				}, value);
 			}
 		},
 	},
 	computed: {
-		...mapState(['addressInput'])
-	},
-	created: function () {
-		this.$store.dispatch('addressInput/setCountyAndDistrictFromZipcode', this.addressInput.zipcode);
+		...mapState(['twzipcode'])
 	},
 	watch: {
-		'addressInput.county': function () {
-			if (this.addressInput.county) {
-				/* 改變 county -> district 也要重設值 */
-				this.$store.dispatch('addressInput/resetDistrict', this.addressInput.county);
+		'twzipcode.county': function (val) {
+			/* 改變 county -> district 也要重設值 */
+			if (this.twzipcode.county) {
+				this.$store.dispatch('twzipcode/resetDistrict', this.twzipcode.county);
 			}
 		},
-		'addressInput.district': function () {
-			if (this.addressInput.district) {
-				this.$store.dispatch('addressInput/updateZipcode');
+		'twzipcode.district': function (val) {
+			if (val) {
+				this.$store.dispatch('twzipcode/updateZipcode');
 			}
 		},
-		'addressInput.zipcode': function (val) {
-			this.$store.dispatch('addressInput/setCountyAndDistrictFromZipcode', val);
+		'twzipcode.zipcode': function (val) {
+			if (val) {
+				this.$store.dispatch('twzipcode/setCountyAndDistrictFromZipcode', val);
+			}
 		}
 	},
 	components: {
@@ -73,13 +67,19 @@ export default {
 	},
 };
 </script>
-
 <style scoped>
-.errorBorder {
-  border: 1px rgb(228, 83, 58) solid;
+.formControl-twzipcode {
+  height: 34px;
+  border-radius: 5px;
+  outline: none;
+  padding: 0px 10px;
+  border: 1px solid #3e4459;
+  transition: all 0.25s ease-out;
 }
-.errorMsg {
-  color: rgb(228, 83, 58);
-  font-size: 14px;
+.formControl-twzipcode:focus {
+  border-color: #36bbd9;
+}
+.hide {
+  display: none;
 }
 </style>

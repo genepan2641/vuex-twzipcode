@@ -3,11 +3,11 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 // import modules
-import addressInput from './modules/address_input';
+import twzipcode from './modules/twzipcode';
 
 export default new Vuex.Store({
     strict: true,
     modules: {
-        addressInput
+        twzipcode
     }
 })
