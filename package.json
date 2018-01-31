@@ -1,9 +1,9 @@
 {
   "name": "vuex-twzipcode",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A Vuex version of Vue2-twzipcode",
   "author": "genepan <gingerpan2641@gmail.com>",
-  "private": true,
+  "homepage": "https://github.com/genepan2641/vuex-twzipcode",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
