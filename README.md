@@ -42,4 +42,22 @@ you can use it like so:
         <twzipcode></twzipcode>
     </div>    
 ```
+## Module Actions
+
+### resetDistrict()
+*(this action is automatically used when `county` is changed)*
+
+reset `district` to the first district of current county.
+
+```js
+  this.$store.dispatch('twzipcode/resetDistrict');
+```
+
+### setCountyAndDistrictFromZipcode(inputZipcode)
+setting matched county and district with given inputZipcode
+
+```js
+  this.$store.dispatch('twzipcode/setCountyAndDistrictFromZipcode', 437);
+  // set county to be '台中市', district to '大甲區'
+```
 
