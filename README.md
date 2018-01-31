@@ -3,7 +3,7 @@
 Rewrite Vue2-twzipcode in Vuex way 
 
 this package was based on orginal repos made by
-[knovour](https://www.npmjs.com/package/vue2-twzipcode)(vue2-twzipcode) and[CasperLaiTW](https://github.com/CasperLaiTW/vue-twzipcode)(vue-twzipcode) 
+[knovour](https://www.npmjs.com/package/vue2-twzipcode)(vue2-twzipcode) and [CasperLaiTW](https://github.com/CasperLaiTW/vue-twzipcode)(vue-twzipcode) 
 
 ## Install
 ```
@@ -59,5 +59,28 @@ setting matched county and district with given inputZipcode
 ```js
   this.$store.dispatch('twzipcode/setCountyAndDistrictFromZipcode', 437);
   // set county to be '台中市', district to '大甲區'
+```
+
+## Component props
+
+### classNames 
+`type: Object`
+
+class for each input
+
+*default*: 
+```
+{
+  county: 'formControl-twzipcode',
+  district: 'formControl-twzipcode',
+  zipcode: 'formControl-twzipcode',
+}
+```
+
+*example*: if you need to use your custom classes, use it like
+```
+  <twzipcode 
+    :class-names="{county: 'yourCustomClass1', district: 'yourCustomClass2', zipcode: 'yourCustomClass3'}"
+  >
 ```
 
