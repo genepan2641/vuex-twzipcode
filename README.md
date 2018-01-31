@@ -7,7 +7,7 @@ this package was based on orginal repos made by
 
 ## Install
 ```
-    npm install vuex-twzipcode --save
+npm install vuex-twzipcode --save
 ```
 
 ## Usage
@@ -41,6 +41,24 @@ you can use it like so:
     <div id="app">
         <twzipcode></twzipcode>
     </div>    
+```
+## Module states
+### access county, district, zipcode
+you can access them with `{ mapState }` from Vuex
+```
+    computed: {
+        // access all states in the module
+        ...mapState(['twzipcode']),
+    }
+```
+or
+```
+    computed: {
+        // access single state in the module
+        ...mapState({
+            county: state => state.twzipcode.county
+        }),
+    }
 ```
 ## Module Actions
 
