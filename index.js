@@ -4,7 +4,9 @@ import twzipcode from './src/components/twzipcode.vue';
 
 
 function install(Vue, options = {}) {
-    if (!options.store) console.log('Please provide a store!!')
+    if (!options.store) {
+        console.log('Please provide a store!!')
+    }
 
     Vue.component('twzipcode', twzipcode);
 

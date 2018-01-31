@@ -1,6 +1,6 @@
 <template>
 	<select 
-		:class="[className, 'county']" 
+		:class="[className, 'twzipcode__county']" 
 		:name="name" 
 		v-model="county" >
 		<option v-for="county in counties" :value="county" :key="county">{{ county }}</option>

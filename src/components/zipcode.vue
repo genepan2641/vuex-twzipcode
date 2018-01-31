@@ -1,6 +1,6 @@
 <template>
 	<input
-		:class="[className, 'zipcode']"
+		:class="[className, 'twzipcode__zipcode']"
 		type="text"
 		maxLength="3"
 		v-model="zipcode"
@@ -28,7 +28,7 @@ export default {
 };
 </script>
 <style scoped>
-.zipcode {
+.twzipcode__zipcode {
   width: 50px;
 }
 </style>

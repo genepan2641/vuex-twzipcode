@@ -3,7 +3,6 @@
 		<zipcode  :class-name="classNames.zipcode"  :name="names.zipcode"></zipcode>
 		<county   :class-name="classNames.county"   :name="names.county"></county>
 		<district :class-name="classNames.district" :name="names.district"></district>
-		<p v-cloak class='errorMsg hasError' v-if='twzipcode.zipcodeError'>{{ twzipcode.zipcodeError }}</p>
 	</div>
 </template>
 
@@ -73,11 +72,11 @@ export default {
   border-radius: 5px;
   outline: none;
   padding: 0px 10px;
-  border: 1px solid #3e4459;
+  border: 1px solid #c3c3c5;
   transition: all 0.25s ease-out;
 }
 .formControl-twzipcode:focus {
-  border-color: #36bbd9;
+  border-color: #3e4459;
 }
 .hide {
   display: none;

@@ -1,6 +1,6 @@
 <template>
 	<select 
-		:class="[className, 'district']" 
+		:class="[className, 'twzipcode__district']" 
 		:name="name" 
 		v-model="district">
 		<option v-for="district in districts" :value="district" :key="district">{{ district }}</option>
