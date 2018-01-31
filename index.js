@@ -1,4 +1,4 @@
-import module from './src/store/modules/address_input';
+import module from './src/store/modules/twzipcode';
 import twzipcode from './src/components/twzipcode.vue';
 
 
