@@ -1,9 +1,12 @@
 # vuex-twzipcode
+[![npm version](https://badge.fury.io/js/vuex-twzipcode.svg)](https://www.npmjs.com/package/vuex-twzipcode)
 
 Rewrite Vue2-twzipcode in Vuex way 
 
 this package was based on orginal repos made by
 [knovour](https://www.npmjs.com/package/vue2-twzipcode)(vue2-twzipcode) and [CasperLaiTW](https://github.com/CasperLaiTW/vue-twzipcode)(vue-twzipcode) 
+
+![image](./static/giphy-twzipcode.gif)
 
 ## Install
 ```
