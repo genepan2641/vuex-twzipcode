@@ -1,4 +1,5 @@
 # vuex-twzipcode
+[![npm version](https://badge.fury.io/js/vuex-twzipcode.svg)](https://www.npmjs.com/package/vuex-twzipcode)
 
 Rewrite Vue2-twzipcode in Vuex way 
 
